@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado Rua</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>🏘️ Resultado da Rua</h1>
+
+    <div th:if="${resultados != null}" class="grid">
+        <div th:each="r : ${resultados}" class="card">
+            <p><strong>CEP:</strong> <span th:text="${r['cep']}"></span></p>
+            <p><strong>Logradouro:</strong> <span th:text="${r['logradouro']}"></span></p>
+            <p><strong>Bairro:</strong> <span th:text="${r['bairro']}"></span></p>
+            <p><strong>Cidade:</strong> <span th:text="${r['localidade']}"></span></p>
+            <p><strong>UF:</strong> <span th:text="${r['uf']}"></span></p>
+        </div>
+    </div>
+
+    <a th:href="@{/}" class="link-btn">🔙 Voltar</a>
+</div>
+</body>
+</html>

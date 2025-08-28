@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado CEP</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>🏠 Resultado do CEP</h1>
+
+    <div th:if="${resultado != null}" class="card">
+        <p><strong>CEP:</strong> <span th:text="${resultado['cep']}"></span></p>
+        <p><strong>Logradouro:</strong> <span th:text="${resultado['logradouro']}"></span></p>
+        <p><strong>Bairro:</strong> <span th:text="${resultado['bairro']}"></span></p>
+        <p><strong>Cidade:</strong> <span th:text="${resultado['localidade']}"></span></p>
+        <p><strong>UF:</strong> <span th:text="${resultado['uf']}"></span></p>
+        <p><strong>Complemento:</strong> <span th:text="${resultado['complemento']}"></span></p>
+    </div>
+
+    <a th:href="@{/}" class="link-btn">🔙 Voltar</a>
+</div>
+</body>
+</html>
